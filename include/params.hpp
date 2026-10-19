@@ -43,17 +43,11 @@ namespace HMM_Params{
         static_cast<std::size_t>(Observations::Count);
 
 
-    // TRANSITION PROBABILITIES
-    // PREV_STATE = CROSS -> CROSS
-    const float C2C = 0.85;
-    // PREV_STATE = NOT_CROSS -> NOT_CROSS
-    const float NC2NC = 0.9;
-
     // Transition Matrix (A) -> Row: Current State, Column: Next State
     constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_NUM_OBSERVATIONSFEATURES> 
     TransitionProbs = {{
-        {log(C2C), log(1-C2C)},
-        {log(NC2NC), log(1-NC2NC)}    
+        {log(0.85), log(0.15)},     // CROSS -> {CROSS (0.85), NOT_CROSS(0.15)}
+        {log(0.25), log(0.75)}      // NOT_CROSS -> {CROSS (0.9), NOT_CROSS(0.1)}
     }};
 
     // Emission Matrix (B) -> Row: State, Column: Observation
