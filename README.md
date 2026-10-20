@@ -8,6 +8,8 @@ Using the Viterbi algorithm for hidden Markov models applied to a pedestrian-int
 
 ## Defining a Statistical Model
 
+File: [pedestiran-intent/include/params.hpp](include/params.hpp)
+
 - Using a Log Prob https://en.wikipedia.org/wiki/Log_probability
     - using log probabilities for computational efficiency and avoid float underflow where it rounds a low number to 0
     - adding vs multiplying prob
@@ -46,5 +48,41 @@ For a `NOT_CROSS` state,
 - The distance to the curb and velocity will be the most important to determine whether a pedestrian intents to `NOT_CROSS` by slowing down or vice versa
 
 
+## Simulating Observations
+
+File: [include/observations.hpp](include/observations.hpp)
+
+Set a simulation goal of recovering `CROSS` or `NOT_CROSS`
+
+### Simulating Pedestrian Signal
+
+Defined by a bool of the following states:
+- `GO` - (`True`)
+- `STOP` - (`False`) 
+
+Transitions every 20 seconds.
+
+
+### Simulating Velocity
+
+Approach 1: Gaussian distribution, independent samples
+- drawing random samples from the distribution
+- but this lacks correlation to previous time step
+- clamps speed to min/max
+
+Approach 2: Gaussian noise, w/ random vel spikes
+- update the previous speed with some gaussian noise
+- add a random occasional increase/decrease in speed to simulate running/slowing down
+- set intial speed to some random vel (m/s) capping max and min
+
+Approach 3: Subcategories within velocity
+- creaate velocity states: slow-walking, walking, running
+- define tri-model distribution
+- randomness to jump btwn means
+
 ## Next Steps
 - Refine the observation models (ie how long until the signal countdowns to 0, incorporate other objects like approaching vehicles)
+
+## Resources
+- https://medium.com/@satyamsettiveerapraveen/viterbi-algorithm-62b0434f831d
+- https://en.wikipedia.org/wiki/Viterbi_algorithm
