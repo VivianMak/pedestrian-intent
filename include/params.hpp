@@ -44,14 +44,14 @@ namespace HMM_Params{
 
 
     // Transition Matrix (A) -> Row: Current State, Column: Next State
-    constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_OBSERVATIONS> 
+    constexpr std::array<std::array<double, NUM_STATES>, NUM_STATES>
     TransitionProbs = {{
         {log(0.85), log(0.15)},     // CROSS -> {CROSS (0.85), NOT_CROSS(0.15)}
-        {log(0.25), log(0.75)}      // NOT_CROSS -> {CROSS (0.9), NOT_CROSS(0.1)}
+        {log(0.25), log(0.75)}      // NOT_CROSS -> {CROSS (0.25), NOT_CROSS(0.75)}
     }};
 
     // Emission Matrix (B) -> Row: State, Column: Observation
-    constexpr std::array<std::array<double, NUM_STATES>, NUM_OBSERVATIONS> 
+    constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_STATES>
     EmissionProbs = {{
         {log(0.6), log(0.2), log(0.2)}, // CROSS -> {SIGNAL (0.6), DISTANCE (0.2), VELOCITY (0.2)}
         {log(0.1), log(0.4), log(0.5)}  // NOT_CROSS -> {SIGNAL (0.1), DISTANCE (0.4), VELOCITY (0.5)}
