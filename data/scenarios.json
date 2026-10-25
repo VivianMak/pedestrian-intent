@@ -1,5 +1,21 @@
+// {
+//     "scenarios":{
+//         "scenario_1": {}
+//     }
+// }
+
+
+
 {
-    "scenarios":{
-        "scenario_1": {}
+  "scenarios": {
+    "scenario_1": {
+      "name": "scenario_1",
+      "description": "TEST DATA",
+      "intent": "CROSS",
+      "params": { "dt": 1.0, "total_time": 30.0, "signal_duration": 5.0,
+                  "init_vel": 0.2, "curb_distance": 10.5, "seed": 0 },
+      "observations": [ {"walk_signal": true, "distance_to_curb": 10.3, "velocity": 0.2}, ... ],
+      "true_states": ["CROSS"]
     }
+  }
 }

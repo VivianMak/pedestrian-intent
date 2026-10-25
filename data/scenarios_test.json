@@ -1,0 +1,207 @@
+{
+    "scenarios": {
+        "test_scenario": {
+            "name": "test_scenario",
+            "description": "TEST DATA",
+            "intent": "CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 30,
+                "signal_duration": 10,
+                "init_vel": 0.2,
+                "curb_distance": 10.5,
+                "seed": 7
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 10.5,
+                    "velocity": 0.2
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 10.294,
+                    "velocity": 0.206
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 10.1284,
+                    "velocity": 0.1657
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 9.8578,
+                    "velocity": 0.2706
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 9.6794,
+                    "velocity": 0.1784
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 9.4312,
+                    "velocity": 0.2482
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 9.1907,
+                    "velocity": 0.2405
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 9.0309,
+                    "velocity": 0.1598
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 8.3992,
+                    "velocity": 0.6317
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 7.649,
+                    "velocity": 0.7502
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 6.7404,
+                    "velocity": 0.9085
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 5.8437,
+                    "velocity": 0.8967
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 4.9477,
+                    "velocity": 0.896
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 3.9685,
+                    "velocity": 0.9792
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 3.2472,
+                    "velocity": 0.7213
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 2.8306,
+                    "velocity": 0.4166
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 2.5415,
+                    "velocity": 0.2891
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 2.2151,
+                    "velocity": 0.3264
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 1.79,
+                    "velocity": 0.4251
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 1.0081,
+                    "velocity": 0.7818
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.093,
+                    "velocity": 0.9151
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 1.1266
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 1.0
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 1.1396
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 1.0672
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 0.9947
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 0.9518
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 0.978
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 1.118
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0,
+                    "velocity": 1.0292
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 0,
+                    "velocity": 1.085
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ]
+        }
+    }
+}
