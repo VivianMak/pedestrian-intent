@@ -3,6 +3,7 @@
 #include <cmath>
 #include <fstream>
 #include <stdexcept>
+#include <random> 
 
 /**
  * DISTANCE, VELOCITY
@@ -19,8 +20,7 @@
  */
 
 namespace SimModel{
-
-    
+   
     /**
      * Switch the walk signal every period
      */
@@ -35,19 +35,28 @@ namespace SimModel{
 
     }
 
+    /**
+     * Based on transition probability table, simulate the true intent
+     */
+    HMM_Params::States sample_next_state(HMM_Params::States current, std::mt19937& rng){
+        // Row = current state, column = next state
+        const auto& row = HMM_Params::TransitionProbs[static_cast<std::size_t>(current)];
+
+        // Pick an index with those odds, then map it back to a state
+        std::discrete_distribution<int> pick(row.begin(), row.end());
+        return static_cast<HMM_Params::States>(pick(rng));
+    }
+
     Scenario simulate(const SimulationParams& params){
         Scenario output;
         output.params = params;
 
-        // Create empty list of observations for total time
-        std::vector<HMM_Params::Observation> observation_list;
-        observation_list.reserve(params.total_time);
+        std::mt19937 rng(params.seed);
 
-        std::vector<HMM_Params::States> true_states;
-        true_states.reserve(params.total_time);
-
+        // Define observations at t=0
         double dist = params.curb_distance;
         double vel = params.init_vel;
+        HMM_Params::States state = params.intent; 
 
         for(int t = 0; t <= params.total_time; t += params.dt){
             
@@ -55,18 +64,19 @@ namespace SimModel{
             obs.walk_signal = walk_signal(t, params.signal_duration);
             obs.distance_to_curb = dist;
             obs.velocity = vel;
+
+            // Add current observation to list
+            output.observations.push_back(obs);
+            output.true_states.push_back(state);
+
+            // Update state, use transition probability table
+            state = sample_next_state(state, rng);
             
             // Update distance and velocity for next time step
             vel = sim_vel(params.intent, vel);
             dist -= vel * params.dt;
 
-            // Add current observation to list
-            observation_list.push_back(obs);
-            
         }
-
-        output.observations = observation_list;
-        output.true_states = //not sure
 
         return output;
     }

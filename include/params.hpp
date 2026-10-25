@@ -1,11 +1,8 @@
 #pragma once
 
 #include <array>
-#include <cmath>
 
 namespace HMM_Params{
-
-    using std::log;
 
     // Hidden states
     enum struct States{
@@ -43,18 +40,21 @@ namespace HMM_Params{
         static_cast<std::size_t>(Observations::Count);
 
 
+    // Plain probabilities, each row sums to 1.
+    // Viterbi takes the log of these itself to avoid underflow (see README)
+
     // Transition Matrix (A) -> Row: Current State, Column: Next State
     constexpr std::array<std::array<double, NUM_STATES>, NUM_STATES>
     TransitionProbs = {{
-        {log(0.85), log(0.15)},     // CROSS -> {CROSS (0.85), NOT_CROSS(0.15)}
-        {log(0.25), log(0.75)}      // NOT_CROSS -> {CROSS (0.25), NOT_CROSS(0.75)}
+        {0.85, 0.15},       // CROSS -> {CROSS (0.85), NOT_CROSS(0.15)}
+        {0.25, 0.75}        // NOT_CROSS -> {CROSS (0.25), NOT_CROSS(0.75)}
     }};
 
     // Emission Matrix (B) -> Row: State, Column: Observation
     constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_STATES>
     EmissionProbs = {{
-        {log(0.6), log(0.2), log(0.2)}, // CROSS -> {SIGNAL (0.6), DISTANCE (0.2), VELOCITY (0.2)}
-        {log(0.1), log(0.4), log(0.5)}  // NOT_CROSS -> {SIGNAL (0.1), DISTANCE (0.4), VELOCITY (0.5)}
+        {0.6, 0.2, 0.2},    // CROSS -> {SIGNAL (0.6), DISTANCE (0.2), VELOCITY (0.2)}
+        {0.1, 0.4, 0.5}     // NOT_CROSS -> {SIGNAL (0.1), DISTANCE (0.4), VELOCITY (0.5)}
     }};
 
 } // namespace HMM_Params

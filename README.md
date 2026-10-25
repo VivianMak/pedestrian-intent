@@ -10,9 +10,11 @@ Using the Viterbi algorithm for hidden Markov models applied to a pedestrian-int
 
 File: [pedestiran-intent/include/params.hpp](include/params.hpp)
 
-- Using a Log Prob https://en.wikipedia.org/wiki/Log_probability
-    - using log probabilities for computational efficiency and avoid float underflow where it rounds a low number to 0
-    - adding vs multiplying prob
+- Probabilities are stored as plain values (each row sums to 1)
+    - easy to read and check, and the simulation samples directly from them
+- Viterbi converts them to log probabilities https://en.wikipedia.org/wiki/Log_probability
+    - Viterbi multiplies one probability per timestep along a path, so the product underflows (rounds to 0) on long sequences
+    - log turns multiplying into adding: log(a * b) = log(a) + log(b), and a sum of logs doesn't shrink to 0
 
 ### Transition Probabilities
 
