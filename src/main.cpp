@@ -7,9 +7,9 @@ int main(){
     SimModel::SimulationParams params{
         .name            = "scenario_1",                // key in the json
         .intent          = HMM_Params::States::CROSS,
-        .dt              = 1.0,                         // s
-        .total_time      = 30.0,                        // s
-        .signal_duration = 5.0,                         // s, GO <-> STOP
+        .dt              = 1,                           // s
+        .total_time      = 30,                          // s
+        .signal_duration = 5,                           // s, GO <-> STOP
         .init_vel        = 0.2,                         // m/s
         .curb_distance   = 10.5,                        // m
         .seed            = 0,

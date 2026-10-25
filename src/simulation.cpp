@@ -24,8 +24,8 @@ namespace SimModel{
     /**
      * Switch the walk signal every period
      */
-    bool walk_signal(double t, double period){
-        return ((int)(t / period) % 2 == 0);
+    bool walk_signal(int t, int period){
+        return ((t / period) % 2 == 0);
     }
 
     /**
@@ -49,7 +49,7 @@ namespace SimModel{
         double dist = params.curb_distance;
         double vel = params.init_vel;
 
-        for(double t = 0.0; t <= params.total_time; t += params.dt){
+        for(int t = 0; t <= params.total_time; t += params.dt){
             
             HMM_Params::Observation obs;
             obs.walk_signal = walk_signal(t, params.signal_duration);
@@ -58,7 +58,7 @@ namespace SimModel{
             
             // Update distance and velocity for next time step
             vel = sim_vel(params.intent, vel);
-            dist = vel * t;
+            dist -= vel * params.dt;
 
             // Add current observation to list
             observation_list.push_back(obs);

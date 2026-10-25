@@ -16,10 +16,10 @@ namespace SimModel{
 
         HMM_Params::States intent = HMM_Params::States::CROSS;
 
-        double dt = 1.0;                // s
-        double total_time = 30.0;       // s
+        int dt = 1;                     // s
+        int total_time = 30;            // s
 
-        double signal_duration = 30.0;  // s, GO <-> STOP
+        int signal_duration = 30;       // s, GO <-> STOP
 
         double init_vel = 0.2;          // m/s
         double curb_distance = 10.5;    // m
@@ -38,7 +38,7 @@ namespace SimModel{
 
     };
 
-    bool walk_signal(double t, double period);
+    bool walk_signal(int t, int period);
     Scenario simulate(const SimulationParams& params);
     void write_scenario(const Scenario& scenario, const std::string& path);
 
