@@ -32,7 +32,7 @@ namespace SimModel{
      * Based on intent, give the next timestep's velocity
      */
     double sim_vel(HMM_Params::States intent, double vel){
-        
+
     }
 
     /**
@@ -69,12 +69,15 @@ namespace SimModel{
             output.observations.push_back(obs);
             output.true_states.push_back(state);
 
+            // End scenario if pedestrian is at curb
+            if (dist <= 0.0) break;
+
             // Update state, use transition probability table
             state = sample_next_state(state, rng);
             
             // Update distance and velocity for next time step
-            vel = sim_vel(params.intent, vel);
-            dist -= vel * params.dt;
+            vel = sim_vel(state, vel);
+            dist = std::max(dist - vel * params.dt, 0.0); 
 
         }
 
