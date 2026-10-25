@@ -43,6 +43,9 @@ namespace SimModel{
         std::vector<HMM_Params::Observation> observation_list;
         observation_list.reserve(params.total_time);
 
+        std::vector<HMM_Params::States> true_states;
+        true_states.reserve(params.total_time);
+
         double dist = params.curb_distance;
         double vel = params.init_vel;
 
@@ -56,8 +59,14 @@ namespace SimModel{
             // Update distance and velocity for next time step
             vel = sim_vel(params.intent, vel);
             dist = vel * t;
+
+            // Add current observation to list
+            observation_list.push_back(obs);
             
         }
+
+        output.observations = observation_list;
+        output.true_states = //not sure
 
         return output;
     }
