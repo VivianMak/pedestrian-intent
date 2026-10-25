@@ -1,24 +1,26 @@
 #pragma once
 
+#include "params.hpp"
+
 namespace SimModel{
 
-    int time;
+    struct SimulationParams{
 
-    bool walkSignal = ((int)(time / 30.0) % 2 == 0);
+        HMM_Params::States intent; //HMM_Params::States::CROSS
+
+        double dt = 1.0;
+        double total_time;
+
+        double signal_duration;
+
+        double init_vel;          // m/s
+        double curb_distance;     // m
+
+    };
+
+    SimulationParams init_sim_params();
+
+    void sim_observations();
+
+    void write_simulation();
 }
-
-/**
- * DISTANCE, VELOCITY
- * - To get distance, we just need to draw random samples of velocity
- * - Assume at time=0, we start at position=0
- * - Create a distribution for velocity to draw from, should be gaussian, to assume constant velocity?
- * - Calculate distance = velocity * time
- * 
- * PEDESTRIAN SIGNAL
- * - Every 30 seconds, the signal transitions from GO -> STOP
- * 
- * GAZE_ANGLE
- * - todo
- */
-
-
