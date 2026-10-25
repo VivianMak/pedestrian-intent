@@ -1,4 +1,5 @@
 #include "observations.hpp"
+#include <nlohmann/json.hpp>
 
 /**
  * DISTANCE, VELOCITY
@@ -16,18 +17,11 @@
 
 namespace SimModel{
 
-    double dt = 1.0;
-    double time = 0.0;
-
-    double signal_duration = 30.0;
-
-    bool walkSignal = ((int)(time / signal_duration) % 2 == 0);
-
-
     SimulationParams init_sim_params(){
         // Define scenario params
         SimulationParams scenario;
 
+        scenario.name = "scenario_1";
         scenario.intent = HMM_Params::States::CROSS;
         scenario.dt = 1.0;
         scenario.total_time = 30.0;
@@ -35,13 +29,24 @@ namespace SimModel{
         scenario.init_vel = 0.2;
         scenario.curb_distance = 10.5;
 
+        return scenario;
     }
 
-    void sim_observations(){
-
+    bool walk_signal(double t, double period){
+        return ((int)(t / period) % 2 == 0);
     }
 
-    void write_simulation(){
+    Scenario simulate(const SimulationParams& params){
+        Scenario output;
+        output.params = params;
+
+        double time = 0.0;
+        bool walkSignal = walk_signal(time, params.signal_duration);
+
+        return output;
+    }
+
+    void write_scenario(const Scenario& scenario, const std::string& path){
         // write to json
     }
 }
