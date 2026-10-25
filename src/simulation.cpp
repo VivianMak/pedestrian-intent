@@ -20,6 +20,33 @@
 
 namespace SimModel{
 
+    
+
+    bool walk_signal(double t, double period){
+        return ((int)(t / period) % 2 == 0);
+    }
+
+    Scenario simulate(const SimulationParams& params){
+        Scenario output;
+        output.params = params;
+
+        double time = 0.0;
+        bool walkSignal = walk_signal(time, params.signal_duration);
+
+        return output;
+    }
+
+
+    
+    /**
+     * AI Implementation of writing to json file
+     * 
+     *  "scenarios": {
+     *      "<name>": { description, intent, params, observations, true_states },
+     *      ...
+     *  }
+     */
+
     // Helpers only used for writing json, so they stay private to this file
     namespace {
 
@@ -42,44 +69,6 @@ namespace SimModel{
             return std::round(static_cast<double>(value) * 1e4) / 1e4;
         }
     }
-
-    SimulationParams init_sim_params(){
-        // Define scenario params
-        SimulationParams scenario;
-
-        scenario.name = "scenario_1";
-        scenario.intent = HMM_Params::States::CROSS;
-        scenario.dt = 1.0;
-        scenario.total_time = 30.0;
-        scenario.signal_duration = 5.0;
-        scenario.init_vel = 0.2;
-        scenario.curb_distance = 10.5;
-
-        return scenario;
-    }
-
-    bool walk_signal(double t, double period){
-        return ((int)(t / period) % 2 == 0);
-    }
-
-    Scenario simulate(const SimulationParams& params){
-        Scenario output;
-        output.params = params;
-
-        double time = 0.0;
-        bool walkSignal = walk_signal(time, params.signal_duration);
-
-        return output;
-    }
-
-    /**
-     * AI Implementation of writing to json file
-     * 
-     *  "scenarios": {
-     *      "<name>": { description, intent, params, observations, true_states },
-     *      ...
-     *  }
-     */
 
     void write_scenario(const Scenario& scenario, const std::string& path){
         const SimulationParams& p = scenario.params;

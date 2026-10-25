@@ -8,7 +8,8 @@
 
 namespace SimModel{
 
-    // Input: defines one scenario
+    // Input: defines one scenario. Set the fields by name in main.cpp (.init_vel = 0.2, ...),
+    // anything left out keeps the default below. Named fields must be listed in this order
     struct SimulationParams{
 
         std::string name;
@@ -36,8 +37,6 @@ namespace SimModel{
         std::vector<HMM_Params::States> true_states;    // ground truth for scoring Viterbi
 
     };
-
-    SimulationParams init_sim_params();
 
     bool walk_signal(double t, double period);
     Scenario simulate(const SimulationParams& params);
