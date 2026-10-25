@@ -44,7 +44,7 @@ namespace HMM_Params{
 
 
     // Transition Matrix (A) -> Row: Current State, Column: Next State
-    constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_NUM_OBSERVATIONSFEATURES> 
+    constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_OBSERVATIONS> 
     TransitionProbs = {{
         {log(0.85), log(0.15)},     // CROSS -> {CROSS (0.85), NOT_CROSS(0.15)}
         {log(0.25), log(0.75)}      // NOT_CROSS -> {CROSS (0.9), NOT_CROSS(0.1)}

@@ -50,7 +50,7 @@ For a `NOT_CROSS` state,
 
 ## Simulating Observations
 
-File: [include/observations.hpp](include/observations.hpp)
+File: [include/simulation.hpp](include/simulation.hpp)
 
 Set a simulation goal of recovering `CROSS` or `NOT_CROSS`
 
