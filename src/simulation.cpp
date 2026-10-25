@@ -21,17 +21,43 @@
 namespace SimModel{
 
     
-
+    /**
+     * Switch the walk signal every period
+     */
     bool walk_signal(double t, double period){
         return ((int)(t / period) % 2 == 0);
+    }
+
+    /**
+     * Based on intent, give the next timestep's velocity
+     */
+    double sim_vel(HMM_Params::States intent, double vel){
+
     }
 
     Scenario simulate(const SimulationParams& params){
         Scenario output;
         output.params = params;
 
-        double time = 0.0;
-        bool walkSignal = walk_signal(time, params.signal_duration);
+        // Create empty list of observations for total time
+        std::vector<HMM_Params::Observation> observation_list;
+        observation_list.reserve(params.total_time);
+
+        double dist = params.curb_distance;
+        double vel = params.init_vel;
+
+        for(double t = 0.0; t <= params.total_time; t += params.dt){
+            
+            HMM_Params::Observation obs;
+            obs.walk_signal = walk_signal(t, params.signal_duration);
+            obs.distance_to_curb = dist;
+            obs.velocity = vel;
+            
+            // Update distance and velocity for next time step
+            vel = sim_vel(params.intent, vel);
+            dist = vel * t;
+            
+        }
 
         return output;
     }
