@@ -11,12 +11,6 @@ namespace HMM_Params{
         Count           // 2
     };
 
-    // Probability of each hidden state at one timestep
-    struct State{
-        double cross;
-        double not_cross;
-    };
-
     // Observation type labels
     enum struct Observations{
         SIGNAL,
@@ -42,8 +36,10 @@ namespace HMM_Params{
         static_cast<std::size_t>(Observations::Count);
 
 
-    // Plain probabilities, each row sums to 1.
-    // Viterbi takes the log of these itself to avoid underflow (see README)
+    // Initial Probabilities (π) -> P(state) at t=0, before any observation
+    // Placeholder: no preference between CROSS and NOT_CROSS yet
+    constexpr std::array<double, NUM_STATES>
+    InitialProbs = {0.5, 0.5};      // {CROSS (0.5), NOT_CROSS (0.5)}
 
     // Transition Matrix (A) -> Row: Current State, Column: Next State
     constexpr std::array<std::array<double, NUM_STATES>, NUM_STATES>

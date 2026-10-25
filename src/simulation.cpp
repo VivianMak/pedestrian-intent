@@ -32,14 +32,14 @@ namespace SimModel{
      * Based on intent, give the next timestep's velocity
      */
     double sim_vel(HMM_Params::States intent, double vel){
-
+        
     }
 
     /**
      * Based on transition probability table, simulate the true intent
      */
     HMM_Params::States sample_next_state(HMM_Params::States current, std::mt19937& rng){
-        // Row = current state, column = next state
+        // Current gives the row number, the column over is the next state
         const auto& row = HMM_Params::TransitionProbs[static_cast<std::size_t>(current)];
 
         // Pick an index with those odds, then map it back to a state
