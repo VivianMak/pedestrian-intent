@@ -4,19 +4,20 @@
 
 namespace HMM_Params{
 
-    // Hidden states
+    // Hidden state labels
     enum struct States{
-        CROSS,
-        NOT_CROSS,
-        Count
+        CROSS,          // 0
+        NOT_CROSS,      // 1
+        Count           // 2
     };
 
+    // Probability of each hidden state at one timestep
     struct State{
         double cross;
         double not_cross;
     };
 
-    // Observations
+    // Observation type labels
     enum struct Observations{
         SIGNAL,
         DISTANCE,
@@ -25,6 +26,7 @@ namespace HMM_Params{
         Count
     };
 
+    // Raw values observed at one timestep, produced by the simulation
     struct Observation{
         bool walk_signal;           // true/false
         float distance_to_curb;     // m
@@ -53,7 +55,7 @@ namespace HMM_Params{
     // Emission Matrix (B) -> Row: State, Column: Observation
     constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_STATES>
     EmissionProbs = {{
-        {0.6, 0.2, 0.2},    // CROSS -> {SIGNAL (0.6), DISTANCE (0.2), VELOCITY (0.2)}
+        {0.5, 0.2, 0.3},    // CROSS -> {SIGNAL (0.6), DISTANCE (0.2), VELOCITY (0.2)}
         {0.1, 0.4, 0.5}     // NOT_CROSS -> {SIGNAL (0.1), DISTANCE (0.4), VELOCITY (0.5)}
     }};
 
