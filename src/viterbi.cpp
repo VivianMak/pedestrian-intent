@@ -1,5 +1,8 @@
 #include "viterbi.hpp"
 
+#include <algorithm>
+#include <iterator>
+
 namespace Viterbi{
 
     using namespace HMM_Params;
@@ -31,20 +34,20 @@ namespace Viterbi{
             // Loop through states
             for (int i = 0; i < NUM_STATES; i++){
 
-                // set best to infinity
-                double best = -std::numeric_limits<double>::infinity();
-                std::size_t best_prev = 0;
-
-                for (int j = 0; j < NUM_STATES; j++){
-                    double score = V[t-1][i] + std::log(TransitionProbs[i][j]);
-
-                    if (score > best){
-                        best = score;
-                        best_prev = j;
-                    }
+                // Score each previous state to current state transition
+                std::array<double, NUM_STATES> scores;
+                for (std::size_t j = 0; j < NUM_STATES; j++){
+                    // score = prev best + transition probability
+                    scores[j] = V[t-1][j] + std::log(HMM_Params::TransitionProbs[j][i]);
                 }
 
-                V[t][i] = best + emission_log_prob(static_cast<States>(i), obs[t]);
+                // Find index of the highest score to map back to state
+                auto it = std::max_element(scores.begin(), scores.end());
+                std::size_t best_prev = std::distance(scores.begin(), it);
+
+                // Add emission probability to the current best path
+                V[t][i] = *it + emission_log_prob(static_cast<States>(i), obs[t]);
+                backptr[t][i] = best_prev;
             }
         }
 
