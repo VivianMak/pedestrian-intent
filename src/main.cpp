@@ -1,4 +1,5 @@
 #include "simulation.hpp"
+#include "scenario_io.hpp"
 
 #include <print>
 
@@ -18,7 +19,7 @@ int main(){
     };
 
     SimModel::Scenario scenario = SimModel::simulate(params);
-    SimModel::write_scenario(scenario, "data/scenarios.json");
+    ScenarioIO::write_scenario(scenario, "data/scenarios.json");
 
 
     for (std::size_t i = 0; i < scenario.true_states.size(); ++i){

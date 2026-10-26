@@ -45,6 +45,5 @@ namespace SimModel{
     double sim_vel(HMM_Params::States intent, double vel, std::mt19937& rng);
     HMM_Params::States sample_next_state(HMM_Params::States current, std::mt19937& rng);
     Scenario simulate(const SimulationParams& params);
-    void write_scenario(const Scenario& scenario, const std::string& path);
 
 }

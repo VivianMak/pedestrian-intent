@@ -10,10 +10,19 @@ find_package(nlohmann_json 3.2.0 REQUIRED)
 
 ##### Build Libraries #####
 
-# Simulation: generates scenarios and writes them to json
+# Simulation
 add_library(sim STATIC src/simulation.cpp)
-target_include_directories(sim PUBLIC include)                  # so "simulation.hpp" and "params.hpp" are found
-target_link_libraries(sim PUBLIC nlohmann_json::nlohmann_json)  # PUBLIC: anything linking sim gets it too
+target_include_directories(sim PUBLIC include)
+
+# Scenario IO: writes and reads scenarios as json
+add_library(scenario_io STATIC src/scenario_io.cpp)
+target_link_libraries(scenario_io
+    PUBLIC  sim
+    PRIVATE nlohmann_json::nlohmann_json)
+
+# Viterbi
+add_library(viterbi STATIC src/viterbi.cpp)
+target_link_libraries(viterbi PUBLIC sim)
 
 
 # enable_testing()
@@ -21,4 +30,4 @@ target_link_libraries(sim PUBLIC nlohmann_json::nlohmann_json)  # PUBLIC: anythi
 
 # Main program executable
 add_executable(main src/main.cpp)
-target_link_libraries(main PRIVATE sim)
+target_link_libraries(main PRIVATE sim scenario_io viterbi)
