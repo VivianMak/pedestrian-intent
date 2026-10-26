@@ -119,6 +119,21 @@ The simulations are logged in [data/scenarios.json](data/scenarios.json) using t
 
 ## Viterbi Algorithm
 
+1. Use dynamic programming to build matrix of size 2 x N_observations
+2. 
+
+Use dynamic programming to build matrix of size 2 x N_observations
+
+- set initial probabilities of hidden intent to 50 50 to capture unknown (50/50)
+For each timestep, and for each possible hidden state
+- find the probability of a transition from past timestep's state `prob_t = prob_t-1[state] + log(tranition_probability)`
+- find the best path based on highest probability
+- read the observations from simulation
+- calculate the probability of current state based on observations `prob_t-1[state] = prob_best_path + log(emission probability)`
+- Fill in the backpointer table
+- Aft
+
+Back track to find the best optimal path
 
 ## Testing and Results
 
