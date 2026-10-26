@@ -8,7 +8,7 @@
  * AI Implementation of writing to and reading from json file
  *
  *  "scenarios": {
- *      "<name>": { description, intent, params, observations, true_states },
+ *      "<name>": { description, intent, params, observations, true_states, predicted_intent, accuracy },
  *      ...
  *  }
  */
@@ -71,6 +71,11 @@ namespace ScenarioIO{
         for (const HMM_Params::States state : scenario.true_states){
             entry["true_states"].push_back(SimModel::state_to_string(state));
         }
+
+        // Viterbi's predicted state at each timestep and how many it got right.
+        // Left empty here, filled in later by write_viterbi_intent
+        entry["predicted_intent"] = json::array();
+        entry["accuracy"] = nullptr;    // written as null until Viterbi runs
 
         // ---- Merge into the existing file ----
         // Each run adds one scenario, so load what is already there first.
@@ -141,5 +146,51 @@ namespace ScenarioIO{
         }
 
         return scenario;
+    }
+
+    void write_viterbi_intent(const std::string& name,
+                              const std::vector<HMM_Params::States>& predicted,
+                              double accuracy,
+                              const std::string& path){
+
+        // ---- Load the whole file ----
+        // The scenario must already be there (written by write_scenario)
+        json file;
+        {
+            std::ifstream in(path);
+            if (!in.is_open()){
+                throw std::runtime_error("write_viterbi_intent: could not open " + path + " for reading");
+            }
+            file = json::parse(in);     // a malformed file throws json::parse_error before anything is overwritten
+        }
+
+        // ---- Find this scenario's entry ----
+        if (!file.contains("scenarios") || !file.at("scenarios").contains(name)){
+            throw std::runtime_error("write_viterbi_intent: no scenario \"" + name + "\" in " + path
+                                     + ", write it with write_scenario first");
+        }
+        json& entry = file["scenarios"][name];
+
+        // One prediction per timestep, so it has to line up with true_states
+        const std::size_t num_steps = entry.at("true_states").size();
+        if (predicted.size() != num_steps){
+            throw std::runtime_error("write_viterbi_intent: got " + std::to_string(predicted.size())
+                                     + " predictions but scenario \"" + name + "\" has "
+                                     + std::to_string(num_steps) + " timesteps");
+        }
+
+        // ---- Fill in the prediction and its accuracy (replaces any earlier ones) ----
+        entry["predicted_intent"] = json::array();
+        for (const HMM_Params::States state : predicted){
+            entry["predicted_intent"].push_back(SimModel::state_to_string(state));
+        }
+        entry["accuracy"] = round4(accuracy);   // fraction correct, 0 to 1
+
+        // ---- Write the whole file back, indented by 4 spaces ----
+        std::ofstream out(path);
+        if (!out.is_open()){
+            throw std::runtime_error("write_viterbi_intent: could not open " + path + " for writing");
+        }
+        out << file.dump(4) << '\n';
     }
 }
