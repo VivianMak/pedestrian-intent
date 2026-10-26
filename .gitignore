@@ -1,1 +1,5 @@
 build/
+
+data/*
+!data/plot_scenarios.py
+!data/scenarios.json
