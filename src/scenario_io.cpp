@@ -8,7 +8,8 @@
  * AI Implementation of writing to and reading from json file
  *
  *  "scenarios": {
- *      "<name>": { description, intent, params, observations, true_states, predicted_intent, accuracy },
+ *      "<name>": { description, intent, params, observations, true_states,
+ *                  predicted_intent, accuracy, viterbi_log_prob },
  *      ...
  *  }
  */
@@ -72,10 +73,11 @@ namespace ScenarioIO{
             entry["true_states"].push_back(SimModel::state_to_string(state));
         }
 
-        // Viterbi's predicted state at each timestep and how many it got right.
-        // Left empty here, filled in later by write_viterbi_intent
+        // Viterbi's predicted state at each timestep, how many it got right, and the
+        // log probability of that path. Left empty here, filled in later by write_viterbi_intent
         entry["predicted_intent"] = json::array();
-        entry["accuracy"] = nullptr;    // written as null until Viterbi runs
+        entry["accuracy"] = nullptr;            // written as null until Viterbi runs
+        entry["viterbi_log_prob"] = nullptr;
 
         // ---- Merge into the existing file ----
         // Each run adds one scenario, so load what is already there first.
@@ -151,6 +153,7 @@ namespace ScenarioIO{
     void write_viterbi_intent(const std::string& name,
                               const std::vector<HMM_Params::States>& predicted,
                               double accuracy,
+                              double log_prob,
                               const std::string& path){
 
         // ---- Load the whole file ----
@@ -179,12 +182,14 @@ namespace ScenarioIO{
                                      + std::to_string(num_steps) + " timesteps");
         }
 
-        // ---- Fill in the prediction and its accuracy (replaces any earlier ones) ----
+        // ---- Fill in the prediction, its accuracy and log probability (replaces any earlier ones) ----
         entry["predicted_intent"] = json::array();
         for (const HMM_Params::States state : predicted){
             entry["predicted_intent"].push_back(SimModel::state_to_string(state));
         }
         entry["accuracy"] = round4(accuracy);   // fraction correct, 0 to 1
+        // log probability can be large (e.g. -123.4567), so round as a double instead of round4's float
+        entry["viterbi_log_prob"] = std::round(log_prob * 1e4) / 1e4;
 
         // ---- Write the whole file back, indented by 4 spaces ----
         std::ofstream out(path);

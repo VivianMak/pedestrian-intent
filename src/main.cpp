@@ -12,7 +12,7 @@ int main(){
         .intent          = HMM_Params::States::NOT_CROSS,
         .dt              = 1,   // don't change
         .total_time      = 40,
-        .signal_duration = 5,
+        .signal_duration = 10,
         .init_vel        = 0.1,
         .curb_distance   = 30,
         .seed            = 0,
@@ -52,9 +52,10 @@ int main(){
     // Calculate accuracy
     double acc = Viterbi::accuracy(hidden.path, scenario.true_states);
     std::println("\naccuracy: {:.1f}%", acc * 100);
+    std::println("log probability of the Viterbi path: {:.4f}", hidden.log_prob);
 
-    // Save the prediction and its accuracy next to the scenario in the json
-    ScenarioIO::write_viterbi_intent(params.name, hidden.path, acc, "data/scenarios.json");
+    // Save the prediction, its accuracy and log probability next to the scenario in the json
+    ScenarioIO::write_viterbi_intent(params.name, hidden.path, acc, hidden.log_prob, "data/scenarios.json");
 
     return 0;
 }
