@@ -16,5 +16,7 @@ namespace Viterbi{
 
     Result decode(const std::vector<Observation>& obs);
 
+    double accuracy(const std::vector<States>& predicted, const std::vector<States>& truth);
+
 
 } //namespace Viterbi

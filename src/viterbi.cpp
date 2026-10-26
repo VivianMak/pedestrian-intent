@@ -106,17 +106,22 @@ namespace Viterbi{
         return result;
     }
 
-    // Fraction of timesteps where the prediction matches the ground truth.
-    // Not part of Viterbi itself: this is for scoring against
-    // Scenario::true_states from the simulation.
+
+    /**
+     * Calculate the accuracy of alignment of predicted and truth
+     */
     double accuracy(const std::vector<States>& predicted,
                     const std::vector<States>& truth){
         if (predicted.empty() || predicted.size() != truth.size()) return 0.0;
 
         std::size_t correct = 0;
+
+        // count all alignment
         for (std::size_t i = 0; i < predicted.size(); ++i){
             if (predicted[i] == truth[i]) ++correct;
         }
+
+        // return percentage
         return static_cast<double>(correct) / predicted.size();
     }
 

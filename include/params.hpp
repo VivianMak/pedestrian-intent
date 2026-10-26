@@ -50,8 +50,8 @@ namespace HMM_Params{
     // Emission Matrix (B)
     constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_STATES>
     EmissionProbs = {{
-        {0.5, 0.2, 0.3},    // CROSS -> {SIGNAL, DISTANCE, VELOCITY}
-        {0.1, 0.4, 0.5}     // NOT_CROSS -> {SIGNAL, DISTANCE, VELOCITY}
+        {0.6, 0.5, 0.1},    // CROSS -> {SIGNAL, DISTANCE, VELOCITY}
+        {0.4, 0.5, 0.8}     // NOT_CROSS -> {SIGNAL, DISTANCE, VELOCITY}
     }};
 
     // Define this for reverse emission matrix
