@@ -36,10 +36,9 @@ namespace HMM_Params{
         static_cast<std::size_t>(Observations::Count);
 
 
-    // Initial Probabilities (π) -> P(state) at t=0, before any observation
-    // Placeholder: no preference between CROSS and NOT_CROSS yet
+    // Initial Probabilities, 50/50
     constexpr std::array<double, NUM_STATES>
-    InitialProbs = {0.5, 0.5};      // {CROSS (0.5), NOT_CROSS (0.5)}
+    InitialProbs = {0.5, 0.5};
 
     // Transition Matrix (A) -> Row: Current State, Column: Next State
     constexpr std::array<std::array<double, NUM_STATES>, NUM_STATES>

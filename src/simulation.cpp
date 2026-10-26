@@ -1,9 +1,11 @@
 #include "simulation.hpp"
 #include <nlohmann/json.hpp>
+#include <algorithm>
 #include <cmath>
 #include <fstream>
 #include <stdexcept>
 #include <random> 
+#include <print>
 
 /**
  * DISTANCE, VELOCITY
@@ -31,8 +33,26 @@ namespace SimModel{
     /**
      * Based on intent, give the next timestep's velocity
      */
-    double sim_vel(HMM_Params::States intent, double vel){
+    constexpr double MIN_VEL   = 0.1;
+    constexpr double MAX_VEL   = 1.5;
+    constexpr double VEL_NOISE = 0.05;   // random noise
+    constexpr double VEL_DRIFT = 0.1;   // slow down or speed up vel based on intent
 
+    double sim_vel(HMM_Params::States intent, double vel, std::mt19937& rng){
+
+        // Consider intent
+        double drift;
+        if (intent == HMM_Params::States::CROSS){
+            drift = VEL_DRIFT; 
+        }else{
+            drift = -VEL_DRIFT;
+        }
+
+        // Gaussian noise centred on drift
+        std::normal_distribution<double> noise(drift, VEL_NOISE);
+        vel += noise(rng);
+
+        return std::clamp(vel, MIN_VEL, MAX_VEL);
     }
 
     /**
@@ -59,6 +79,8 @@ namespace SimModel{
         HMM_Params::States state = params.intent; 
 
         for(int t = 0; t <= params.total_time; t += params.dt){
+
+            // std::println("At timestep: {}; Current intent is: {}", t, state_to_string(state));
             
             HMM_Params::Observation obs;
             obs.walk_signal = walk_signal(t, params.signal_duration);
@@ -76,7 +98,7 @@ namespace SimModel{
             state = sample_next_state(state, rng);
             
             // Update distance and velocity for next time step
-            vel = sim_vel(state, vel);
+            vel = sim_vel(state, vel, rng);
             dist = std::max(dist - vel * params.dt, 0.0); 
 
         }
@@ -95,21 +117,22 @@ namespace SimModel{
      *  }
      */
 
+    // Enums have no built-in text form (for json or println), so convert the hidden state by hand.
+    // Declared in simulation.hpp so main.cpp can use it too
+    const char* state_to_string(HMM_Params::States state){
+        switch(state){
+            case HMM_Params::States::CROSS:     return "CROSS";
+            case HMM_Params::States::NOT_CROSS: return "NOT_CROSS";
+            default:                            return "UNKNOWN";
+        }
+    }
+
     // Helpers only used for writing json, so they stay private to this file
     namespace {
 
         // ordered_json keeps keys in the order they are inserted
         // (plain nlohmann::json sorts them alphabetically)
         using json = nlohmann::ordered_json;
-
-        // json has no built-in enum -> string, so convert the hidden state by hand
-        const char* state_to_string(HMM_Params::States state){
-            switch(state){
-                case HMM_Params::States::CROSS:     return "CROSS";
-                case HMM_Params::States::NOT_CROSS: return "NOT_CROSS";
-                default:                            return "UNKNOWN";
-            }
-        }
 
         // json stores floats as doubles, so 10.3f would be printed as 10.300000190734863
         // rounding to 4 decimals keeps the file readable

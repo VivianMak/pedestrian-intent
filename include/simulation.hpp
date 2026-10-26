@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <random>
 #include <string>
 #include <vector>
 
@@ -38,8 +39,10 @@ namespace SimModel{
 
     };
 
+    const char* state_to_string(HMM_Params::States state);
+
     bool walk_signal(int t, int period);
-    double sim_vel(HMM_Params::States intent, double vel);
+    double sim_vel(HMM_Params::States intent, double vel, std::mt19937& rng);
     HMM_Params::States sample_next_state(HMM_Params::States current, std::mt19937& rng);
     Scenario simulate(const SimulationParams& params);
     void write_scenario(const Scenario& scenario, const std::string& path);
