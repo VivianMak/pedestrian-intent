@@ -591,7 +591,7 @@
             "params": {
                 "dt": 1,
                 "total_time": 40,
-                "signal_duration": 5,
+                "signal_duration": 10,
                 "init_vel": 0.1,
                 "curb_distance": 30.0,
                 "seed": 0
@@ -623,52 +623,52 @@
                     "velocity": 0.1
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 29.5,
                     "velocity": 0.1
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 29.4,
                     "velocity": 0.1
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 29.2039,
                     "velocity": 0.1961
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 28.8074,
                     "velocity": 0.3965
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 28.2566,
                     "velocity": 0.5508
                 },
                 {
-                    "walk_signal": true,
+                    "walk_signal": false,
                     "distance_to_curb": 27.609,
                     "velocity": 0.6476
                 },
                 {
-                    "walk_signal": true,
+                    "walk_signal": false,
                     "distance_to_curb": 26.9037,
                     "velocity": 0.7053
                 },
                 {
-                    "walk_signal": true,
+                    "walk_signal": false,
                     "distance_to_curb": 26.1424,
                     "velocity": 0.7612
                 },
                 {
-                    "walk_signal": true,
+                    "walk_signal": false,
                     "distance_to_curb": 25.2405,
                     "velocity": 0.9019
                 },
                 {
-                    "walk_signal": true,
+                    "walk_signal": false,
                     "distance_to_curb": 24.1979,
                     "velocity": 1.0427
                 },
@@ -723,42 +723,42 @@
                     "velocity": 1.5
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 8.4572,
                     "velocity": 1.5
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 7.0406,
                     "velocity": 1.4165
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 5.6815,
                     "velocity": 1.3592
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 4.4335,
                     "velocity": 1.248
                 },
                 {
-                    "walk_signal": false,
+                    "walk_signal": true,
                     "distance_to_curb": 3.0641,
                     "velocity": 1.3694
                 },
                 {
-                    "walk_signal": true,
+                    "walk_signal": false,
                     "distance_to_curb": 1.6273,
                     "velocity": 1.4368
                 },
                 {
-                    "walk_signal": true,
+                    "walk_signal": false,
                     "distance_to_curb": 0.1273,
                     "velocity": 1.5
                 },
                 {
-                    "walk_signal": true,
+                    "walk_signal": false,
                     "distance_to_curb": 0.0,
                     "velocity": 1.5
                 }
@@ -833,7 +833,8 @@
                 "CROSS",
                 "CROSS"
             ],
-            "accuracy": 0.8182
+            "accuracy": 0.8182,
+            "viterbi_log_prob": -61.3071
         }
     }
 }
