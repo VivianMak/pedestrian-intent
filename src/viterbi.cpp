@@ -101,7 +101,7 @@ namespace Viterbi{
         for (int s : state_idx){
             result.path.push_back(static_cast<States>(s));
         }
-        result.prob = std::exp(V[T-1][best_last]);
+        result.log_prob = V[T-1][best_last];
 
         return result;
     }

@@ -8,7 +8,7 @@ namespace Viterbi{
     using namespace HMM_Params;
 
     struct Result{
-        double prob;
+        double log_prob;
         std::vector<States> path;
     };
 
