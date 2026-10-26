@@ -40,18 +40,22 @@ namespace HMM_Params{
     constexpr std::array<double, NUM_STATES>
     InitialProbs = {0.5, 0.5};
 
-    // Transition Matrix (A) -> Row: Current State, Column: Next State
+    // Transition Matrix
     constexpr std::array<std::array<double, NUM_STATES>, NUM_STATES>
     TransitionProbs = {{
-        {0.85, 0.15},       // CROSS -> {CROSS (0.85), NOT_CROSS(0.15)}
-        {0.25, 0.75}        // NOT_CROSS -> {CROSS (0.25), NOT_CROSS(0.75)}
+        {0.85, 0.15},       // CROSS -> {CROSS NOT_CROSS}
+        {0.25, 0.75}        // NOT_CROSS -> {CROSS, NOT_CROSS}
     }};
 
-    // Emission Matrix (B) -> Row: State, Column: Observation
+    // Emission Matrix (B)
     constexpr std::array<std::array<double, NUM_OBSERVATIONS>, NUM_STATES>
     EmissionProbs = {{
-        {0.5, 0.2, 0.3},    // CROSS -> {SIGNAL (0.6), DISTANCE (0.2), VELOCITY (0.2)}
-        {0.1, 0.4, 0.5}     // NOT_CROSS -> {SIGNAL (0.1), DISTANCE (0.4), VELOCITY (0.5)}
+        {0.5, 0.2, 0.3},    // CROSS -> {SIGNAL, DISTANCE, VELOCITY}
+        {0.1, 0.4, 0.5}     // NOT_CROSS -> {SIGNAL, DISTANCE, VELOCITY}
     }};
+
+    // Define this for reverse emission matrix
+    constexpr double FAR_DIST = 3.0;
+    constexpr double SLOW_VEL = 0.5;
 
 } // namespace HMM_Params
