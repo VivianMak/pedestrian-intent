@@ -120,25 +120,23 @@ The simulations are logged in [data/scenarios.json](data/scenarios.json) using t
 ## Viterbi Algorithm
 
 1. Use dynamic programming to build matrix of size 2 x N_observations
-2. 
+2. Initialize the first timestep's probability to 50/50 to capture unknown
+3. For each timestep,
+4. For each possible hidden state,
+5. Find the probability of a transition from past timestep's state `prob_t = prob_t-1[state] + log(tranition_probability)`
+6. Find the best path from t-1 timestep with highest probability
+7. Compute a probability of hidden state based on observations
+8. Calculate the probability of current state based on observations `prob_t-1[state] = prob_best_path + log(emission probability)`
+9. Fill in a table with backpointers
+10. Find highest probability at final timestep
+11. Backtrack to find optimal path
 
-Use dynamic programming to build matrix of size 2 x N_observations
-
-- set initial probabilities of hidden intent to 50 50 to capture unknown (50/50)
-For each timestep, and for each possible hidden state
-- find the probability of a transition from past timestep's state `prob_t = prob_t-1[state] + log(tranition_probability)`
-- find the best path based on highest probability
-- read the observations from simulation
-- calculate the probability of current state based on observations `prob_t-1[state] = prob_best_path + log(emission probability)`
-- Fill in the backpointer table
-- Aft
-
-Back track to find the best optimal path
 
 ## Testing and Results
 
 ## Next Steps
 - Refine the observation models (ie how long until the signal countdowns to 0, incorporate other objects like approaching vehicles)
+- A bigger emission table to account for the substates of observation categories (ie. Velocity = {slow, walking, running})
 
 ## Resources
 - https://medium.com/@satyamsettiveerapraveen/viterbi-algorithm-62b0434f831d
