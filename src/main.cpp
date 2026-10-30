@@ -8,13 +8,13 @@ int main(){
 
     // Adjust simulation params
     SimModel::SimulationParams params{
-        .name            = "scenario_test_not_cross", // scenario_test_cross
-        .intent          = HMM_Params::States::NOT_CROSS,
+        .name            = "scenario_cross_initvel_2.0", // scenario_test_cross
+        .intent          = HMM_Params::States::CROSS,
         .dt              = 1,   // don't change
         .total_time      = 40,
-        .signal_duration = 10,
-        .init_vel        = 0.1,
-        .curb_distance   = 30,
+        .signal_duration = 15,
+        .init_vel        = 2.0,
+        .curb_distance   = 40,
         .seed            = 0,
     };
 
@@ -34,7 +34,7 @@ int main(){
 
     Viterbi::Result hidden = Viterbi::decode(scenario.observations);
 
-    // Print the true state next to the Viterbi prediction, x marks a wrong prediction
+    // Terminal: Print the true state next to the Viterbi prediction, x marks a wrong prediction
     std::println("\n{:4}  {:9}  {:9}  {:1}  {:6}  {:>5}  {}",
                 "t", "true", "predicted", "", "signal", "dist", "vel");
     for (std::size_t i = 0; i < scenario.true_states.size(); ++i){

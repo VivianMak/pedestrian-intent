@@ -69,7 +69,7 @@ The probabilities here don't sum up to 1 because each observation has multiple "
 
 ## Simulating Observations
 
-File: [include/simulation.hpp](include/simulation.hpp)
+File: [include/simulation.cpp](include/simulation.cpp)
 
 Set a simulation goal of recovering `CROSS` or `NOT_CROSS`
 
@@ -119,6 +119,8 @@ The simulations are logged in [data/scenarios.json](data/scenarios.json) using t
 
 ## Viterbi Algorithm
 
+File: [src/viterbi.cpp](src/viterbi.cpp)
+
 1. Use dynamic programming to build matrix of size 2 x N_observations
 2. Initialize the first timestep's probability to 50/50 to capture unknown
 3. For each timestep,
@@ -133,6 +135,55 @@ The simulations are logged in [data/scenarios.json](data/scenarios.json) using t
 
 
 ## Testing and Results
+
+When generating the simulation, the true intent is also encoded in the sim's metadata, but never directly read from viterbi until the final accuracy comparison.
+
+I performed a test below to peforme a parameter sweep of the `initial velocity` from `0.2 to 1.5` keeping the other parameters consistent.
+
+```cpp
+SimModel::SimulationParams params{
+        .name            = "scenario_cross",
+        .intent          = HMM_Params::States::CROSS, // AND NOT_CROSS
+        .dt              = 1,   // don't change
+        .total_time      = 40,
+        .signal_duration = 15,
+        .init_vel        = // param sweep
+        .curb_distance   = 40,
+        .seed            = 0,
+    };
+```
+
+
+For intial `CROSS` intent:
+
+| Init_vel | True Final Intent | Predicted Final Intent | Path Accuracy (%) | Path Probability (log) | 
+| :---: | :---: | :---: | :---: | :---: |
+| 0.2| CROSS | CROSS | 76.5 | -60.35 |
+| 0.4 | CROSS | CROSS | 84.8 | -56.93
+| 0.6| CROSS | CROSS | 87.1 | -52.24 |
+| 0.8 | CROSS | CROSS | 86.7 | -50.77 |
+| 1.0| NOT_CROSS | CROSS | 86.2 | -48.89 | 
+| 1.2 | NOT_CROSS | CROSS | 86.2 | -48.89 |
+| 1.5 | NOT_CROSS | CROSS | 89.3 | -47.01 | 
+| 2.0 | NOT_CROSS | CROSS | 89.3 | -47.01 |
+
+For intial `NOT_CROSS` intent:
+
+| Init_vel | Final Intent | Accuracy |
+| :---: | :---: | :---: |
+| 0.2| CROSS | 0.7 |
+| 0.4 | NOT_CROSS | 0.8 |
+| 0.6| CROSS | 0.7 |
+| 0.8 | NOT_CROSS | 0.8 |
+| 1.0| CROSS | 0.7 |
+
+
+And I noticed:
+
+- the final intent is always `CROSS`
+- 
+
+
 
 ## Next Steps
 - Refine the observation models (ie how long until the signal countdowns to 0, incorporate other objects like approaching vehicles)
