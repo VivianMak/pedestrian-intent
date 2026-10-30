@@ -13,8 +13,7 @@
  * PEDESTRIAN SIGNAL
  * - Every 30 seconds, the signal transitions from GO -> STOP
  *
- * GAZE_ANGLE
- * - todo
+ * GAZE_ANGLE (next steps)
  */
 
 namespace SimModel{
@@ -67,6 +66,7 @@ namespace SimModel{
         Scenario output;
         output.params = params;
 
+        // Set randomizatoin
         std::mt19937 rng(params.seed);
 
         // Define observations at t=0
@@ -74,6 +74,7 @@ namespace SimModel{
         double vel = params.init_vel;
         HMM_Params::States state = params.intent; 
 
+        // Main sim loop
         for(int t = 0; t <= params.total_time; t += params.dt){
 
             // std::println("At timestep: {}; Current intent is: {}", t, state_to_string(state));
@@ -103,8 +104,7 @@ namespace SimModel{
     }
 
 
-    // Enums have no built-in text form (for json or println), so convert the hidden state by hand.
-    // Declared in simulation.hpp so main.cpp and scenario_io.cpp can use it too
+    // Convert hidden state's enum to text, for json
     const char* state_to_string(HMM_Params::States state){
         switch(state){
             case HMM_Params::States::CROSS:     return "CROSS";

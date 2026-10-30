@@ -9,8 +9,7 @@
 
 namespace SimModel{
 
-    // Input: defines one scenario. Set the fields by name in main.cpp (.init_vel = 0.2, ...),
-    // anything left out keeps the default below. Named fields must be listed in this order
+    // Set the parameters of the observation
     struct SimulationParams{
 
         std::string name;
