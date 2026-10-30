@@ -1861,6 +1861,2211 @@
             ],
             "accuracy": 0.8929,
             "viterbi_log_prob": -47.0135
+        },
+        "scenario_notcross_initvel_0.2": {
+            "name": "scenario_notcross_initvel_0.2",
+            "description": "",
+            "intent": "NOT_CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 40,
+                "signal_duration": 15,
+                "init_vel": 0.2,
+                "curb_distance": 40.0,
+                "seed": 0
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 40.0,
+                    "velocity": 0.2
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.8941,
+                    "velocity": 0.1059
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.7941,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.6941,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.5941,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.4941,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.3941,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.198,
+                    "velocity": 0.1961
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.8014,
+                    "velocity": 0.3965
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.2506,
+                    "velocity": 0.5508
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.6031,
+                    "velocity": 0.6476
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.8978,
+                    "velocity": 0.7053
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.1365,
+                    "velocity": 0.7612
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.2346,
+                    "velocity": 0.9019
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 34.1919,
+                    "velocity": 1.0427
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 33.0459,
+                    "velocity": 1.146
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 31.7352,
+                    "velocity": 1.3107
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 30.3352,
+                    "velocity": 1.4001
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 28.8352,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 27.3352,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 25.8352,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 24.3352,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 22.9338,
+                    "velocity": 1.4013
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 21.4512,
+                    "velocity": 1.4826
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 19.9512,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 18.4512,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 17.0347,
+                    "velocity": 1.4165
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 15.6755,
+                    "velocity": 1.3592
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 14.4276,
+                    "velocity": 1.248
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 13.0582,
+                    "velocity": 1.3694
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 11.6214,
+                    "velocity": 1.4368
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 10.1214,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 8.6214,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 7.1214,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 5.6214,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 4.2483,
+                    "velocity": 1.3731
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 2.9604,
+                    "velocity": 1.2879
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 1.83,
+                    "velocity": 1.1304
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.7952,
+                    "velocity": 1.0348
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.0,
+                    "velocity": 0.8572
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS"
+            ],
+            "predicted_intent": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "accuracy": 0.725,
+            "viterbi_log_prob": -72.421
+        },
+        "scenario_notcross_initvel_0.4": {
+            "name": "scenario_notcross_initvel_0.4",
+            "description": "",
+            "intent": "NOT_CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 40,
+                "signal_duration": 15,
+                "init_vel": 0.4,
+                "curb_distance": 40.0,
+                "seed": 1
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 40.0,
+                    "velocity": 0.4
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.7801,
+                    "velocity": 0.2199
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.6473,
+                    "velocity": 0.1328
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.5473,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.4473,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.3473,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.2473,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.1473,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.0473,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.9473,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.7845,
+                    "velocity": 0.1628
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.5444,
+                    "velocity": 0.2401
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.2679,
+                    "velocity": 0.2764
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.9373,
+                    "velocity": 0.3307
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.7032,
+                    "velocity": 0.234
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 37.3339,
+                    "velocity": 0.3693
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 36.8407,
+                    "velocity": 0.4932
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 36.2379,
+                    "velocity": 0.6029
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 35.5793,
+                    "velocity": 0.6586
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 35.0153,
+                    "velocity": 0.564
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 34.5645,
+                    "velocity": 0.4508
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 34.2771,
+                    "velocity": 0.2874
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 34.1344,
+                    "velocity": 0.1426
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 34.0344,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 33.9344,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 33.8344,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 33.6088,
+                    "velocity": 0.2256
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 33.2452,
+                    "velocity": 0.3636
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 32.8093,
+                    "velocity": 0.4359
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 32.1945,
+                    "velocity": 0.6148
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 31.4419,
+                    "velocity": 0.7526
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 30.5917,
+                    "velocity": 0.8502
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 29.6495,
+                    "velocity": 0.9422
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 28.6808,
+                    "velocity": 0.9688
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 27.6767,
+                    "velocity": 1.004
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 26.5715,
+                    "velocity": 1.1053
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 25.4147,
+                    "velocity": 1.1567
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 24.4045,
+                    "velocity": 1.0102
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 23.3885,
+                    "velocity": 1.016
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 22.3021,
+                    "velocity": 1.0864
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 21.1779,
+                    "velocity": 1.1242
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "predicted_intent": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "accuracy": 0.7073,
+            "viterbi_log_prob": -78.8288
+        },
+        "scenario_notcross_initvel_0.6": {
+            "name": "scenario_notcross_initvel_0.6",
+            "description": "",
+            "intent": "NOT_CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 40,
+                "signal_duration": 15,
+                "init_vel": 0.6,
+                "curb_distance": 40.0,
+                "seed": 0
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 40.0,
+                    "velocity": 0.6
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.4941,
+                    "velocity": 0.5059
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.1593,
+                    "velocity": 0.3348
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.9272,
+                    "velocity": 0.2321
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.7995,
+                    "velocity": 0.1277
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.6995,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.5995,
+                    "velocity": 0.1
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.4034,
+                    "velocity": 0.1961
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.0069,
+                    "velocity": 0.3965
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.4561,
+                    "velocity": 0.5508
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.8086,
+                    "velocity": 0.6476
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.1032,
+                    "velocity": 0.7053
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.342,
+                    "velocity": 0.7612
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 34.4401,
+                    "velocity": 0.9019
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 33.3974,
+                    "velocity": 1.0427
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 32.2514,
+                    "velocity": 1.146
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 30.9407,
+                    "velocity": 1.3107
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 29.5406,
+                    "velocity": 1.4001
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 28.0406,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 26.5406,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 25.0406,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 23.5406,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 22.1393,
+                    "velocity": 1.4013
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 20.6567,
+                    "velocity": 1.4826
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 19.1567,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 17.6567,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 16.2402,
+                    "velocity": 1.4165
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 14.881,
+                    "velocity": 1.3592
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 13.633,
+                    "velocity": 1.248
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 12.2637,
+                    "velocity": 1.3694
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 10.8268,
+                    "velocity": 1.4368
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 9.3268,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 7.8268,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 6.3268,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 4.8268,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 3.4537,
+                    "velocity": 1.3731
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 2.1659,
+                    "velocity": 1.2879
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 1.0354,
+                    "velocity": 1.1304
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.0007,
+                    "velocity": 1.0348
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.0,
+                    "velocity": 0.8572
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS"
+            ],
+            "predicted_intent": [
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "accuracy": 0.675,
+            "viterbi_log_prob": -72.8588
+        },
+        "scenario_notcross_initvel_0.8": {
+            "name": "scenario_notcross_initvel_0.8",
+            "description": "",
+            "intent": "NOT_CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 40,
+                "signal_duration": 15,
+                "init_vel": 0.8,
+                "curb_distance": 40.0,
+                "seed": 0
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 40.0,
+                    "velocity": 0.8
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.2941,
+                    "velocity": 0.7059
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.7593,
+                    "velocity": 0.5348
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.3272,
+                    "velocity": 0.4321
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.9995,
+                    "velocity": 0.3277
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.7954,
+                    "velocity": 0.2041
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.6698,
+                    "velocity": 0.1256
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.4482,
+                    "velocity": 0.2217
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.0261,
+                    "velocity": 0.4221
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.4498,
+                    "velocity": 0.5764
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.7766,
+                    "velocity": 0.6731
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.0458,
+                    "velocity": 0.7309
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 34.259,
+                    "velocity": 0.7868
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 33.3315,
+                    "velocity": 0.9275
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 32.2633,
+                    "velocity": 1.0682
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 31.0917,
+                    "velocity": 1.1716
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 29.7555,
+                    "velocity": 1.3362
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 28.3298,
+                    "velocity": 1.4256
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 26.8298,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 25.3298,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 23.8298,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 22.3298,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 20.9285,
+                    "velocity": 1.4013
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 19.4459,
+                    "velocity": 1.4826
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 17.9459,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 16.4459,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 15.0294,
+                    "velocity": 1.4165
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 13.6702,
+                    "velocity": 1.3592
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 12.4223,
+                    "velocity": 1.248
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 11.0529,
+                    "velocity": 1.3694
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 9.616,
+                    "velocity": 1.4368
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 8.116,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 6.616,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 5.116,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 3.616,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 2.243,
+                    "velocity": 1.3731
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.9551,
+                    "velocity": 1.2879
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.0,
+                    "velocity": 1.1304
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS"
+            ],
+            "predicted_intent": [
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "accuracy": 0.6842,
+            "viterbi_log_prob": -69.2667
+        },
+        "scenario_notcross_initvel_1.0": {
+            "name": "scenario_notcross_initvel_1.0",
+            "description": "",
+            "intent": "NOT_CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 40,
+                "signal_duration": 15,
+                "init_vel": 1.0,
+                "curb_distance": 40.0,
+                "seed": 0
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 40.0,
+                    "velocity": 1.0
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 39.0941,
+                    "velocity": 0.9059
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.3593,
+                    "velocity": 0.7348
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.7272,
+                    "velocity": 0.6321
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.1995,
+                    "velocity": 0.5277
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.7954,
+                    "velocity": 0.4041
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.4698,
+                    "velocity": 0.3256
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.0482,
+                    "velocity": 0.4217
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.4261,
+                    "velocity": 0.6221
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 34.6498,
+                    "velocity": 0.7764
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 33.7766,
+                    "velocity": 0.8731
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 32.8458,
+                    "velocity": 0.9309
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 31.859,
+                    "velocity": 0.9868
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 30.7315,
+                    "velocity": 1.1275
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 29.4633,
+                    "velocity": 1.2682
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 28.0917,
+                    "velocity": 1.3716
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 26.5917,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 25.0917,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 23.5917,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 22.0917,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 20.5917,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 19.0917,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 17.6903,
+                    "velocity": 1.4013
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 16.2078,
+                    "velocity": 1.4826
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 14.7078,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 13.2078,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 11.7913,
+                    "velocity": 1.4165
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 10.4321,
+                    "velocity": 1.3592
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 9.1841,
+                    "velocity": 1.248
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 7.8147,
+                    "velocity": 1.3694
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 6.3779,
+                    "velocity": 1.4368
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 4.8779,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 3.3779,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 1.8779,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.3779,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.0,
+                    "velocity": 1.3731
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS"
+            ],
+            "predicted_intent": [
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "accuracy": 0.6944,
+            "viterbi_log_prob": -64.3777
+        },
+        "scenario_notcross_initvel_1.2": {
+            "name": "scenario_notcross_initvel_1.2",
+            "description": "",
+            "intent": "NOT_CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 40,
+                "signal_duration": 15,
+                "init_vel": 1.2,
+                "curb_distance": 40.0,
+                "seed": 0
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 40.0,
+                    "velocity": 1.2
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.8941,
+                    "velocity": 1.1059
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.9593,
+                    "velocity": 0.9348
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.1272,
+                    "velocity": 0.8321
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.3995,
+                    "velocity": 0.7277
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.7954,
+                    "velocity": 0.6041
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.2698,
+                    "velocity": 0.5256
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 34.6482,
+                    "velocity": 0.6217
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 33.8261,
+                    "velocity": 0.8221
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 32.8498,
+                    "velocity": 0.9764
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 31.7766,
+                    "velocity": 1.0731
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 30.6458,
+                    "velocity": 1.1309
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 29.459,
+                    "velocity": 1.1868
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 28.1315,
+                    "velocity": 1.3275
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 26.6633,
+                    "velocity": 1.4682
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 25.1633,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 23.6633,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 22.1633,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 20.6633,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 19.1633,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 17.6633,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 16.1633,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 14.7619,
+                    "velocity": 1.4013
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 13.2794,
+                    "velocity": 1.4826
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 11.7794,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 10.2794,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 8.8628,
+                    "velocity": 1.4165
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 7.5037,
+                    "velocity": 1.3592
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 6.2557,
+                    "velocity": 1.248
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 4.8863,
+                    "velocity": 1.3694
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 3.4495,
+                    "velocity": 1.4368
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 1.9495,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.4495,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.0,
+                    "velocity": 1.5
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "predicted_intent": [
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "accuracy": 0.6765,
+            "viterbi_log_prob": -56.6556
+        },
+        "scenario_notcross_initvel_1.5": {
+            "name": "scenario_notcross_initvel_1.5",
+            "description": "",
+            "intent": "NOT_CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 40,
+                "signal_duration": 15,
+                "init_vel": 1.5,
+                "curb_distance": 40.0,
+                "seed": 0
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 40.0,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.5941,
+                    "velocity": 1.4059
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.3593,
+                    "velocity": 1.2348
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 36.2272,
+                    "velocity": 1.1321
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.1995,
+                    "velocity": 1.0277
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 34.2954,
+                    "velocity": 0.9041
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 33.4698,
+                    "velocity": 0.8256
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 32.5482,
+                    "velocity": 0.9217
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 31.4261,
+                    "velocity": 1.1221
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 30.1498,
+                    "velocity": 1.2764
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 28.7766,
+                    "velocity": 1.3731
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 27.3458,
+                    "velocity": 1.4309
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 25.859,
+                    "velocity": 1.4868
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 24.359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 22.859,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 21.359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 19.859,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 18.359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 16.859,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 15.359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 13.859,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 12.359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 10.9576,
+                    "velocity": 1.4013
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 9.475,
+                    "velocity": 1.4826
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 7.975,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 6.475,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 5.0585,
+                    "velocity": 1.4165
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 3.6994,
+                    "velocity": 1.3592
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 2.4514,
+                    "velocity": 1.248
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 1.082,
+                    "velocity": 1.3694
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.0,
+                    "velocity": 1.4368
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "predicted_intent": [
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "accuracy": 0.6452,
+            "viterbi_log_prob": -52.24
+        },
+        "scenario_notcross_initvel_2.0": {
+            "name": "scenario_notcross_initvel_2.0",
+            "description": "",
+            "intent": "NOT_CROSS",
+            "params": {
+                "dt": 1,
+                "total_time": 40,
+                "signal_duration": 15,
+                "init_vel": 2.0,
+                "curb_distance": 40.0,
+                "seed": 0
+            },
+            "observations": [
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 40.0,
+                    "velocity": 2.0
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 38.5,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 37.1711,
+                    "velocity": 1.3289
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 35.945,
+                    "velocity": 1.2261
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 34.8232,
+                    "velocity": 1.1217
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 33.825,
+                    "velocity": 0.9982
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 32.9054,
+                    "velocity": 0.9196
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 31.8897,
+                    "velocity": 1.0157
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 30.6735,
+                    "velocity": 1.2162
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 29.3031,
+                    "velocity": 1.3704
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 27.8359,
+                    "velocity": 1.4672
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 26.3359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 24.8359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 23.3359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 21.8359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 20.3359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 18.8359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 17.3359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 15.8359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 14.3359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 12.8359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 11.3359,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 9.9346,
+                    "velocity": 1.4013
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 8.452,
+                    "velocity": 1.4826
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 6.952,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 5.452,
+                    "velocity": 1.5
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 4.0355,
+                    "velocity": 1.4165
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 2.6763,
+                    "velocity": 1.3592
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 1.4283,
+                    "velocity": 1.248
+                },
+                {
+                    "walk_signal": false,
+                    "distance_to_curb": 0.0589,
+                    "velocity": 1.3694
+                },
+                {
+                    "walk_signal": true,
+                    "distance_to_curb": 0.0,
+                    "velocity": 1.4368
+                }
+            ],
+            "true_states": [
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "NOT_CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "predicted_intent": [
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS",
+                "CROSS"
+            ],
+            "accuracy": 0.6452,
+            "viterbi_log_prob": -52.24
         }
     }
 }

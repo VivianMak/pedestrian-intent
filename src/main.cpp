@@ -8,8 +8,8 @@ int main(){
 
     // Adjust simulation params
     SimModel::SimulationParams params{
-        .name            = "scenario_cross_initvel_2.0", // scenario_test_cross
-        .intent          = HMM_Params::States::CROSS,
+        .name            = "scenario_notcross_initvel_2.0", // scenario_test_cross
+        .intent          = HMM_Params::States::NOT_CROSS,
         .dt              = 1,   // don't change
         .total_time      = 40,
         .signal_duration = 15,

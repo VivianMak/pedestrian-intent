@@ -169,13 +169,17 @@ For intial `CROSS` intent:
 
 For intial `NOT_CROSS` intent:
 
-| Init_vel | Final Intent | Accuracy |
-| :---: | :---: | :---: |
-| 0.2| CROSS | 0.7 |
-| 0.4 | NOT_CROSS | 0.8 |
-| 0.6| CROSS | 0.7 |
-| 0.8 | NOT_CROSS | 0.8 |
-| 1.0| CROSS | 0.7 |
+
+| Init_vel | True Final Intent | Predicted Final Intent | Path Accuracy (%) | Path Probability (log) | 
+| :---: | :---: | :---: | :---: | :---: |
+| 0.2| NOT_CROSS | CROSS | 72.5 | -72.42 |
+| 0.4 | NOT_CROSS | CROSS | 70.7 | -78.83 |
+| 0.6| NOT_CROSS | CROSS | 67.5 | -72.86 |
+| 0.8 | NOT_CROSS | CROSS | 68.4 | -69.26 |
+| 1.0| NOT_CROSS | CROSS | 69.4 | -64.37 | 
+| 1.2 | CROSS | CROSS | 67.6 | -56.65 |
+| 1.5 | CROSS | CROSS | 64.5 | -52.24 | 
+| 2.0 | CROSS | CROSS | 64.5 | -52.24 |
 
 
 And I noticed:
