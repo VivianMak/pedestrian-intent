@@ -1,9 +1,22 @@
-# Predict Pedestrian Intent at Crosswalks
+# Predict Pedestrian Intent at Crosswalks using the Viterbi Algorithm
 
 > Vivian Mak \
 > Data Structure and Algorithm Course
 
-Using the Viterbi algorithm for hidden Markov models applied to a pedestrian-intent crosswalk scenario. In this algorithm, the goal is to predict with quantified uncertainty of whether a pedestrian approaching a crosswalk is intending to cross or not cross. The simulated "observations" could include factors like the velocity of the pedestrian (float), distance to curb (float), pedestrian signal (True / False),. The emission probabilities will be defined by the likehoods of the observed states relating back to the cross / not cross intent at each timestep of the moving pedestrian. When looking for the next hidden state or intent, we take the previous time step's prediction into account to derive the "most likely" transition of intent.
+How can we tell whether a pedestrian walking towards a crosswalk intends to cross using a subset of observations?
+
+This project models that question as a **hidden Markov model (HMM)** and solves it with the **Viterbi algorithm**. A dynamic-programming approach is used to find the highest probable sequence of hidden states with knowledge of current and previous sequence of observations.
+
+- **Hidden state (what we want to know):** the pedestrian's intent at each timestep, `CROSS` or `NOT_CROSS`
+- **Observations (what we can measure):** the walk signal (GO / STOP), distance to the curb (m) and velocity (m/s)
+
+Intent is modeled across frames or timesteps as a combination of the **transition probabilities**, defining the likelihood of state transition, and the **emission probabilities**, defining the contribution of observations to the hidden state.Through these two set of modeled probabilties, **a single best intent path is derived**.
+
+Intent tends to persist from one second to the next (the **transition probabilities**), and each intent makes some observations more likely than others (the **emission probabilities**; for example, a crossing pedestrian tends to walk briskly while the signal says GO). Viterbi combines the two to find the single best intent path.
+
+In this project, I have abstracted the world to two states `CROSS` or `NOT_CROSS` and simplified the observations that contribute to this model. A simulator was used to generate toy problems with options to adjust parameters. The generated trajectory has an "answer key" which is the true intent. The Viterbi only reads from the list of observations and returns the most likely path and the logged probability of the path. Finally, a comparison is made against the true intent to produce an accuracy score.
+
+A simulator generates pedestrian trajectories from a known intent, so every scenario has an answer key. Viterbi sees only the observations and returns its predicted intent at each timestep and the log probability of that path. Comparing it against the true intent gives an accuracy score.
 
 Deliverables:
 
@@ -66,6 +79,7 @@ For a `NOT_CROSS` state,
 
 The probabilities here don't sum up to 1 because each observation has multiple "substates". For example, the binary signal has GO or STOP states, the distance is defined by CLOSE or NOT CLOSE through `constexpr double FAR_DIST`.
 
+![](docs/hmm_diagram.png)
 
 ## Simulating Observations
 
@@ -134,7 +148,7 @@ File: [src/viterbi.cpp](src/viterbi.cpp)
 11. Backtrack to find optimal path
 
 
-## Testing and Results
+## Testing
 
 When generating the simulation, the true intent is also encoded in the sim's metadata, but never directly read from viterbi until the final accuracy comparison.
 
@@ -181,17 +195,32 @@ For intial `NOT_CROSS` intent:
 | 1.5 | CROSS | CROSS | 64.5 | -52.24 | 
 | 2.0 | CROSS | CROSS | 64.5 | -52.24 |
 
+<br>
 
-And I noticed:
+I plotted scenarios with the highest accuracies below. ([AI Disclosure](#ai-disclosure)) The top plot visualizes the scenario via distance to the curb over time. The bottom plot visualizes the comparison of the path of true intent (generated from sim) and the derived intent path with the viterbi algorithm.
 
-- the final intent is always `CROSS`
-- 
+This scenario had an intial intent of `CROSS` and intial velocity of `1.5`.
+![](data/scenarios/scenario_cross_initvel_1.5_intent.png)
 
+
+
+This scenario had an intial intent of `NOT_CROSS` and intial velocity of `0.2`.
+![](data/scenarios/scenario_notcross_initvel_0.2_intent.png)
+
+
+<br>
+
+## Results
+
+- The maximum accuracy for intial states: `CROSS = 89.3%` and `NOT_CROSS = 72.5%`. The lowest accuracy for intial states: `CROSS = 76.5%` and `NOT_CROSS = 64.5%`. The model performs better when the intial state starts as cross.
+- The `predicted final intent` of inital `NOT_CROSS` state always resulted in cross. There could be some flaw with the model that biasses towards crossing. This could also be interpreted as a saftey of factor.
+- All of the log probabilities are very low signalling that the scenario is unlikely. However, the average probability is higher for an intial state of `CROSS`. Again, this could be because the model biases towards crossing
 
 
 ## Next Steps
 - Refine the observation models (ie how long until the signal countdowns to 0, incorporate other objects like approaching vehicles)
 - A bigger emission table to account for the substates of observation categories (ie. Velocity = {slow, walking, running})
+- Fine tune the model to reduce the log probabilities
 
 ## Resources
 - https://medium.com/@satyamsettiveerapraveen/viterbi-algorithm-62b0434f831d
@@ -199,6 +228,6 @@ And I noticed:
 - https://www.geeksforgeeks.org/artificial-intelligence/viterbi-algorithm-for-hidden-markov-models-hmms/
 
 ## AI Disclosure
-The following functions are written with AI:
+The following files were written with AI:
 - [src/scenario_io.cpp](src/scenario_io.cpp) - Writing to and reading from json files
 - [data/plot_scenarios.py](data/plot_scenarios.py) - Generate plots from json file
